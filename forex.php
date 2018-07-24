@@ -37,15 +37,15 @@ echo $audmxn; ?>
 <?php
 $audpen = round( ($rates->PEN / $rates->AUD), 2);
 echo $audpen; ?>
-Peruvian Sol
+ Peruvian Sol
 </span>
 <br>
 <span id="display">
 1 AUD is
 <?php
-$audcop = round( ($rates->COP / $rates->AUD), 2);
+$audcop = round( ($rates->COP / $rates->AUD), 0);
 echo $audcop; ?>
-Colombian Sol
+ Colombian Sol
 </span>
 <br>
 <span id="display">
@@ -53,7 +53,7 @@ Colombian Sol
 <?php
 $audusd = round( ($rates->USD / $rates->AUD), 2);
 echo $audusd; ?>
-USD
+ USD
 </span>
 </div>
 </body>
