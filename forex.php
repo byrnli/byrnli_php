@@ -21,12 +21,13 @@ font-size: 1em;
 <body>
 <div id="demo">
 <span id="popNow">
-1 AUD is 
+1 USD is 
 <?php
 $url = 'https://openexchangerates.org/api/latest.json?app_id=013a14a8528e43259be556f393e6d5a3'; // path to your JSON file
 $data = file_get_contents($url); // put the contents of the file into a variable
 $forexdata = json_decode($data); // decode the JSON feed
-echo $forexdata-> rates.MXN; ?>
+$rates = $forexdata->rates;
+echo $rates->MXN; ?>
  Mexican Pesos
 
 </span>
