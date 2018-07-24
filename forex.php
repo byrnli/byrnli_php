@@ -2,7 +2,7 @@
 <head title="Exchange Rates">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-#popNow {
+#load{
 font-size: 1em;
 }
 #demo{
@@ -13,14 +13,14 @@ font-size: 1em;
 	text-align: center;
 	font-family: sans-serif;
 	}
-#growth{
+#display{
 	font-size: 0.8em;
 }
 </style>
 
 <body>
 <div id="demo">
-<span id="popNow">
+<span id="load">
 1 USD is 
 <?php
 $url = 'https://openexchangerates.org/api/latest.json?app_id=013a14a8528e43259be556f393e6d5a3'; // path to your JSON file
@@ -29,12 +29,13 @@ $forexdata = json_decode($data); // decode the JSON feed
 $rates = $forexdata->rates;
 echo $rates->MXN; ?>
  Mexican Pesos
-
 </span>
-<div id="growth"> 
-<span id=growthRate>
-
+<span id="display">
+1 AUD is
+<?php
+$audpen = $rates->PEN / $rates->AUD;
+echo $audpen; ?>
+Peruvian Sol
 </span>
-</div>
 </div>
 </body>
